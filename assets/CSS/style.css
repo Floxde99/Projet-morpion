@@ -1,0 +1,197 @@
+header h1 {
+    font-size: 3em;
+    /* Taille de la police ajustée pour être bien visible */
+    color: white;
+    /* Couleur blanche pour contraster avec le fond */
+    text-transform: uppercase;
+    /* Texte en majuscules pour un look moderne */
+    letter-spacing: 4px;
+    /* Espacement entre les lettres pour un effet futuriste */
+    margin-bottom: 20px;
+    /* Marge inférieure pour espacer du contenu suivant */
+    text-align: center;
+    /* Centrage du texte */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ombre pour améliorer la lisibilité */
+    animation: glow-title 1.5s ease-in-out infinite alternate;
+    /* Animation de lueur */
+}
+
+/* Animation de lueur pour le titre principal */
+@keyframes glow-title {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    /* Assure que le parent prend toute la hauteur de la fenêtre */
+    margin: 0;
+    /* Supprime les marges par défaut du corps */
+    background: url('../pictures/background4.png.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    gap: 100px;
+}
+
+/* Style pour la zone de jeu */
+#gameContainer {
+    position: relative;
+    border: 3px solid #00ffff;
+    /* Bordure néon bleue légèrement plus épaisse */
+    width: 450px;
+    /* Augmentation de la largeur */
+    height: 450px;
+    /* Augmentation de la hauteur */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fond légèrement transparent */
+    box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff;
+    /* Ombre néon plus grande */
+    border-radius: 15px;
+    /* Coins arrondis plus grands */
+    overflow: hidden;
+    /* Cache les débordements */
+}
+
+/* Style pour les lignes de la grille */
+.row {
+    display: flex;
+    border-bottom: 3px solid #00ffff;
+    /* Bordure plus épaisse */
+    height: 33.33%;
+    width: 100%;
+}
+
+/* Style pour les cellules */
+.cell {
+    flex: 1;
+    border-right: 3px solid #00ffff;
+    /* Bordure plus épaisse */
+    border-left: 3px solid #00ffff;
+    /* Bordure plus épaisse */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    /* Augmentation de la taille de la police */
+    color: #00ffff;
+    /* Texte néon */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fond semi-transparent */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transition pour les effets */
+}
+
+/* Supprime la bordure droite pour la dernière cellule de chaque ligne */
+.row .cell:last-child {
+    border-right: none;
+}
+
+/* Supprime la bordure inférieure pour la dernière ligne */
+.row:last-child {
+    border-bottom: none;
+}
+
+/* Effet au survol des cellules */
+.cell:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    /* Fond légèrement plus clair au survol */
+    transform: scale(1.1);
+    /* Agrandissement au survol */
+}
+
+/* Style pour les symboles (X et O) */
+.cell svg {
+
+    width: 85%;
+    height: 85%;
+    transition: stroke 0.3s;
+}
+
+/* Effet au survol des symboles */
+.cell:hover svg {
+    stroke: #00ff99;
+    /* Couleur légèrement plus claire au survol */
+}
+
+/* Animation de lueur pour les symboles */
+.cell svg {
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 5px #00ffcc) drop-shadow(0 0 10px #00ffcc);
+    }
+
+    to {
+        filter: drop-shadow(0 0 20px #00ffcc) drop-shadow(0 0 35px #00ffcc);
+    }
+}
+
+#Games {
+    display: none;
+}
+
+/* Style pour la section du menu */
+#Startmenu {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: auto;
+    max-width: 400px;
+    /* Augmentation de la largeur maximale */
+    width: 100%;
+    /* Largeur totale pour s'adapter à l'écran */
+    padding: 30px;
+    /* Augmentation du rembourrage interne */
+    border-radius: 20px;
+    /* Légère augmentation du rayon des bordures */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Style pour le titre du menu */
+#Startmenu h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Style pour les éléments du menu */
+.menu {
+    font-size: 1.2em;
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+/* Effet au survol des éléments du menu */
+.menu:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Animation de lueur pour le titre */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
