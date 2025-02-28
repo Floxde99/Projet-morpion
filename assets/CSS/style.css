@@ -44,6 +44,8 @@ body {
 
 /* Style pour la zone de jeu */
 #gameContainer {
+    display: flex;
+    flex-direction: column;
     position: relative;
     border: 3px solid #00ffff;
     /* Bordure néon bleue légèrement plus épaisse */
@@ -66,7 +68,7 @@ body {
     display: flex;
     border-bottom: 3px solid #00ffff;
     /* Bordure plus épaisse */
-    height: 33.33%;
+    flex: 1;
     width: 100%;
 }
 

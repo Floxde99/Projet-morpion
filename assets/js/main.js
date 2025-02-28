@@ -78,10 +78,11 @@ function startGameP(t) {
     console.log(t);
     let plateau = document.querySelector("#Games")
     plateau.style.display = "block"
+    
     let menu = document.querySelector("#Startmenu");
     if (menu) {
         menu.style.display = "none";
-        createMap(gridPfour);
+        createMap(gridPfour);        
     } else {
         console.error("Element with ID 'Games' not found.");
     } if (t === "Puissance 4 avec ami") {
