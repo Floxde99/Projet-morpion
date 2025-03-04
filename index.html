@@ -25,9 +25,30 @@
             </section>
             <section id="Games" >
                 <div id="gameContainer">
-
                 </div>
             </section>
+            <div id="gameModal" class="modal">
+                <div class="modal-content">
+                    <h2 id="modalTitle">Partie Terminée !</h2>
+                    <div class="score-container">
+                        <div class="score-box">
+                            <h3>Session Actuelle</h3>
+                            <p>Joueur: <span id="currentPlayerScore">0</span></p>
+                            <p>IA: <span id="currentIAScore">0</span></p>
+                        </div>
+                        <div class="score-box">
+                            <h3>Meilleurs Scores</h3>
+                            <p>Joueur: <span id="highscorePlayer">0</span></p>
+                            <p>IA: <span id="highscoreIA">0</span></p>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button onclick="reinitialiserJeu()" class="modal-btn rejouer">Rejouer</button>
+                        <button onclick="showMainMenu()" class="modal-btn menu">Menu</button>
+                    </div>
+                </div>
+            </div>
+            
         </main>
     <script src="./assets/js/main.js"></script>
 </body>
